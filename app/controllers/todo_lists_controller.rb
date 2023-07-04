@@ -1,5 +1,6 @@
 class TodoListsController < ApplicationController
   before_action :set_todo_list, only: %i[ show edit update destroy ]
+  
 
   # GET /todo_lists or /todo_lists.json
   def index
@@ -49,12 +50,13 @@ class TodoListsController < ApplicationController
 
   # DELETE /todo_lists/1 or /todo_lists/1.json
   def destroy
-    @todo_list.destroy
-
-    respond_to do |format|
-      format.html { redirect_to todo_lists_url, notice: "Todo list was successfully destroyed." }
-      format.json { head :no_content }
+    @todo_list.todo_items.destroy_all # Delete associated todo_items first
+    if @todo_list.destroy
+      flash[:notice] = 'Todo list was successfully destroyed.'
+    else
+      flash[:error] = 'Todo list could not be destroyed.'
     end
+    redirect_to root_url
   end
 
   private
