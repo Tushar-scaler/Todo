@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Note: Getting issues in install rails 5.1 on ruby 2.4.1 
 
-Things you may want to cover:
+* Ruby version: 2.7.2
+* Rails version: 5.1.1
 
-* Ruby version
+Snapshots: 
 
-* System dependencies
+![Alt text](image-2.png)
 
-* Configuration
 
-* Database creation
+![Alt text](image-3.png)
 
-* Database initialization
 
-* How to run the test suite
+![Alt text](image-4.png)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
